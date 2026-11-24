@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123d32">
+  <meta name="description" content="ARESA Charity Group is a community organization in Aresa, established in September 2015. We support people experiencing hardship through emergency assistance and Ramadan giving.">
+  <title>ARESA Charity Group | Together for Aresa</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--forest:#123d32;--deep:#0b2d26;--lime:#c9e568;--cream:#f7f6ef;--ink:#19251f}
+    html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;background:#f7f6ef;color:var(--ink)}h1,h2,h3,.display{font-family:'Manrope',sans-serif}
+    .hero-bg{background:linear-gradient(90deg,rgba(7,34,28,.90) 0%,rgba(7,34,28,.72) 48%,rgba(7,34,28,.12) 100%),url('images/community-hero.png') center 43%/cover}
+    .grain{background-image:radial-gradient(#ffffff12 .7px,transparent .7px);background-size:7px 7px}
+    .site-sidebar{position:fixed;inset:0 auto 0 0;width:300px;z-index:70;overflow-y:auto;background:#fbfaf6;border-right:1px solid #e8e5d9;padding:26px 22px;box-shadow:8px 0 30px #17372b08}
+    .page-main{margin-left:300px;min-width:0}.mobile-topbar{display:none}
+    .page-link{display:flex;align-items:center;gap:12px;width:100%;border:0;border-radius:12px;padding:11px 12px;text-align:left;font-size:13px;font-weight:600;color:#59645d;background:transparent;transition:background .2s,color .2s;cursor:pointer}
+    .page-link:hover{background:#eef0e8;color:#123d32}.page-link.active{background:#e9efdb;color:#123d32;font-weight:700}.nav-icon{display:grid;place-items:center;width:27px;height:27px;border-radius:9px;background:#fff;font-size:17px;color:#668044}.page-link.active .nav-icon{background:#123d32;color:#c9e568}
+    .side-label{font-size:10px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:#71815c}
+    .gallery-photo{transition:transform .5s ease}.gallery-item:hover .gallery-photo{transform:scale(1.035)}
+    #page-home .hero-bg:after{content:"Illustrative image";position:absolute;right:1.25rem;bottom:1.25rem;z-index:2;padding:.5rem .8rem;border:1px solid #ffffff38;border-radius:999px;color:#fff;background:#0b2d268c;font-size:.7rem;backdrop-filter:blur(8px)}
+    .page-view{display:none;min-width:0}.page-view.active{display:block}.page-view:not([data-view="home"]){min-height:calc(100vh - 24px);background:#f7f6ef}
+    @media(max-width:1023px){.site-sidebar{width:min(88vw,365px);transform:translateX(-105%);transition:transform .3s ease;box-shadow:18px 0 50px #071b1740}.site-sidebar.is-open{transform:translateX(0)}.page-main{margin-left:0}.mobile-topbar{display:flex}.hero-bg{min-height:calc(100svh - 68px)!important}}
+    @media(max-width:640px){.hero-bg{background-position:58% center;background-image:linear-gradient(90deg,rgba(7,34,28,.89),rgba(7,34,28,.66)),url('images/community-hero.png')}}
+  </style>
+</head>
+<body class="min-h-screen">
+  <div id="menuOverlay" class="fixed inset-0 z-[60] hidden bg-[#071b17]/55 lg:hidden" aria-hidden="true"></div>
+  <aside id="sideMenu" class="site-sidebar" aria-label="ARESA Charity Group navigation">
+    <div class="flex items-center gap-3 border-b border-stone-200 pb-6">
+      <span class="grid h-[58px] w-[58px] shrink-0 place-items-center rounded-[18px] bg-[#123d32] text-[#c9e568] shadow-md shadow-[#123d32]/15"><svg viewBox="0 0 48 48" class="h-10 w-10" fill="none" aria-hidden="true"><path d="M24 5 43 40H5L24 5Z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M24 17v15M16.5 25.5h15" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="25" r="10" stroke="currentColor" stroke-width="1.6"/></svg></span>
+      <span><span class="block display text-[21px] font-extrabold leading-tight tracking-tight text-[#123d32]">ARESA</span><span class="mt-1 block text-[10px] font-bold tracking-[.16em] text-stone-500">CHARITY GROUP</span></span>
+      <button id="closeMenu" class="ml-auto grid h-10 w-10 place-items-center rounded-full border border-stone-300 text-xl text-[#123d32] lg:hidden" aria-label="Close navigation">×</button>
+    </div>
+    <div class="mt-7"><p class="side-label px-3">Explore</p><nav class="mt-3 flex flex-col gap-1" aria-label="Main pages">
+      <button class="page-link active" data-page="home" aria-current="page"><span class="nav-icon">⌂</span>Home</button>
+      <button class="page-link" data-page="about"><span class="nav-icon">✳</span>About us</button>
+      <button class="page-link" data-page="work"><span class="nav-icon">♡</span>Our work</button>
+      <button class="page-link" data-page="giving"><span class="nav-icon">＋</span>Giving</button>
+      <button class="page-link" data-page="leadership"><span class="nav-icon">◎</span>Leadership</button>
+    </nav></div>
+    <div class="mt-7 rounded-2xl border border-stone-200 bg-white p-4"><div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#8da94b]"></span><p class="side-label">Supporting Aresa since 2015</p></div><p class="mt-2 text-xs leading-5 text-stone-500">Neighbors coming together to support people in Aresa.</p></div>
+    <p class="mt-6 text-[10px] tracking-wide text-stone-400">ARESA · ESTABLISHED IN SEPTEMBER 2015</p>
+  </aside>
+  <div class="page-main">
+    <header class="mobile-topbar sticky top-0 z-50 items-center justify-between border-b border-black/5 bg-[#f7f6ef]/95 px-4 py-3 backdrop-blur">
+      <a href="#home" class="flex items-center gap-2" data-home-link><span class="grid h-10 w-10 place-items-center rounded-xl bg-[#123d32] text-[#c9e568]"><svg viewBox="0 0 48 48" class="h-7 w-7" fill="none"><path d="M24 5 43 40H5L24 5Z" stroke="currentColor" stroke-width="2.7"/><path d="M24 17v15M16.5 25.5h15" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span><span class="display font-extrabold text-[#123d32]">ARESA CHARITY</span></a>
+      <button id="menuButton" class="flex items-center gap-2 rounded-full border border-stone-300 px-4 py-2 text-sm font-bold text-[#123d32]" aria-label="Open page navigation" aria-expanded="false"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></button>
+    </header>
+    <main>
+      <section id="page-home" class="page-view active" data-view="home">
+        <div class="hero-bg relative flex min-h-[calc(100svh-68px)] items-center overflow-hidden text-white sm:min-h-screen"><div class="grain absolute inset-0"></div><div class="relative mx-auto w-full max-w-7xl px-6 py-20 sm:px-12 lg:px-16"><div class="max-w-2xl"><span class="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[.14em] text-white/90 backdrop-blur"><span class="h-2 w-2 rounded-full bg-[#c9e568]"></span> Welcome to our community</span><h1 class="display mt-7 text-[52px] font-extrabold leading-[1.02] tracking-[-.055em] sm:text-7xl lg:text-[88px]">Welcome to <span class="text-[#c9e568]">ARESA.</span></h1><p class="mt-6 max-w-md text-base leading-7 text-white/85 sm:text-lg sm:leading-8">We are a community built on kindness, generosity, and care for our neighbors. We’re glad you’re here.</p><div class="mt-9 flex flex-wrap gap-3"><button class="rounded-full bg-[#c9e568] px-6 py-3.5 text-sm font-bold text-[#123d32] transition hover:bg-[#b9d756]" data-go="about">Learn about us <span class="ml-2">→</span></button><button class="rounded-full border border-white/35 bg-white/10 px-6 py-3.5 text-sm font-bold text-white backdrop-blur transition hover:bg-white/20" data-go="work">See our community work</button></div></div></div></div>
+      </section>
+      <section id="page-about" class="page-view" data-view="about"><div class="mx-auto max-w-5xl px-6 py-16 sm:px-10 sm:py-24"><p class="side-label">Our story</p><h1 class="display mt-3 max-w-3xl text-4xl font-extrabold leading-tight tracking-[-.05em] text-[#123d32] sm:text-6xl">Neighbors helping neighbors in Aresa.</h1><div class="mt-10 grid gap-10 xl:grid-cols-[1fr_300px]"><div class="space-y-5 text-base leading-8 text-stone-600"><p>ARESA Charity Group is a community organization established in Aresa in September 2015. Since then, we have brought people together to support families and individuals facing poverty or hardship.</p><p>We believe neighbors can make a meaningful difference by looking out for one another. Through community contributions, we have helped many people in Aresa.</p></div><div class="h-fit rounded-3xl bg-[#123d32] p-7 text-white"><p class="text-xs font-bold uppercase tracking-[.16em] text-[#c9e568]">Serving Aresa</p><p class="display mt-4 text-4xl font-extrabold">Since 2015</p><p class="mt-3 text-sm leading-6 text-white/70">A community supporting its neighbors.</p></div></div></div></section>
+      <section id="page-work" class="page-view" data-view="work"><div class="mx-auto max-w-6xl px-6 py-14 sm:px-10 sm:py-20"><p class="side-label">Community in action</p><h1 class="display mt-2 text-4xl font-extrabold tracking-[-.045em] text-[#123d32] sm:text-5xl">How we show up.</h1><p class="mt-4 max-w-2xl leading-7 text-stone-500">Our members support people in Aresa during emergencies and come together to give during Ramadan.</p><div class="mt-9 grid gap-5 sm:grid-cols-2 xl:grid-cols-3"><figure class="gallery-item overflow-hidden rounded-[20px] bg-white shadow-sm"><div class="overflow-hidden"><img class="gallery-photo h-64 w-full object-cover" src="images/ramadan-family-food.png" alt="A Somali family receiving Ramadan food from an ARESA Charity Group volunteer" loading="lazy"></div><figcaption class="px-5 py-4"><p class="text-sm font-bold text-[#123d32]">Supporting children and families</p><p class="mt-1 text-xs text-stone-500">Supporting neighbors and families.</p></figcaption></figure><figure class="gallery-item overflow-hidden rounded-[20px] bg-white shadow-sm"><div class="overflow-hidden"><img class="gallery-photo h-64 w-full object-cover" src="images/community-distribution.png" alt="Somali parents receiving food and dates from ARESA Charity Group volunteers" loading="lazy"></div><figcaption class="px-5 py-4"><p class="text-sm font-bold text-[#123d32]">Neighbors giving together</p><p class="mt-1 text-xs text-stone-500">Community members joining together to give.</p></figcaption></figure><figure class="gallery-item overflow-hidden rounded-[20px] bg-white shadow-sm"><div class="overflow-hidden"><img class="gallery-photo h-64 w-full object-cover" src="images/community-hero.png" alt="Volunteers distributing food parcels in an Aresa village" loading="lazy"></div><figcaption class="px-5 py-4"><p class="text-sm font-bold text-[#123d32]">Community care in action</p><p class="mt-1 text-xs text-stone-500">Neighbors working together to help.</p></figcaption></figure></div><p class="mt-5 text-[11px] text-stone-400">These AI-generated images are illustrations and do not depict actual ARESA families or distributions. Replace them with photos of your own activities when available.</p></div></section>
+      <section id="page-giving" class="page-view" data-view="giving"><div class="mx-auto max-w-5xl px-6 py-16 sm:px-10 sm:py-24"><p class="side-label">Giving together</p><h1 class="display mt-3 max-w-3xl text-4xl font-extrabold leading-tight tracking-[-.05em] text-[#123d32] sm:text-6xl">Every act of generosity matters.</h1><p class="mt-5 max-w-2xl text-base leading-7 text-stone-500">Our community WhatsApp group helps members coordinate contributions for emergencies and Ramadan.</p><div class="mt-10 grid gap-5 sm:grid-cols-2"><article class="rounded-3xl bg-white p-7 shadow-[0_8px_30px_#142f250c]"><span class="grid h-12 w-12 place-items-center rounded-2xl bg-[#eaf0d5] text-2xl text-[#123d32]">＋</span><h2 class="display mt-5 text-xl font-bold text-[#123d32]">Emergency contributions</h2><p class="mt-3 text-sm leading-6 text-stone-500">When urgent needs arise, members contribute through the group to support people facing hardship.</p></article><article class="rounded-3xl bg-white p-7 shadow-[0_8px_30px_#142f250c]"><span class="grid h-12 w-12 place-items-center rounded-2xl bg-[#eaf0d5] text-2xl text-[#123d32]">☾</span><h2 class="display mt-5 text-xl font-bold text-[#123d32]">Ramadan giving</h2><p class="mt-3 text-sm leading-6 text-stone-500">Each Ramadan, we collect donations to share food and dates with families and local institutions in Aresa.</p></article></div><div class="mt-8 rounded-3xl border border-[#dce3cf] bg-[#f0f3e7] p-6 sm:p-8"><p class="text-xs font-bold uppercase tracking-[.17em] text-[#71815c]">Ramadan campaign impact</p><div class="mt-4 grid gap-5 sm:grid-cols-[auto_1fr] sm:items-start"><div class="rounded-2xl bg-[#123d32] px-5 py-4 text-white"><p class="display text-3xl font-extrabold">50</p><p class="mt-1 text-xs font-semibold text-white/75">families supported</p></div><div><p class="text-sm leading-6 text-[#425448]">Our community has raised up to <strong>300,000</strong> in Ramadan contributions. We provided 50 families with food packages containing 25 kg of rice, flour, dates, and cooking oil. We also donated dates to four mosques and Aresa Girls High School.</p><p class="mt-3 text-xs leading-5 text-stone-500">To find out how to join the WhatsApp group and contribute, please contact a current group member.</p></div></div></div></div></section>
+      <section id="page-leadership" class="page-view" data-view="leadership"><div class="mx-auto max-w-5xl px-6 py-16 sm:px-10 sm:py-24"><p class="side-label">The people behind our work</p><h1 class="display mt-3 text-4xl font-extrabold tracking-[-.05em] text-[#123d32] sm:text-6xl">Community leadership</h1><p class="mt-5 max-w-2xl leading-7 text-stone-500">Our leaders help bring Aresa’s generous community together.</p><div class="mt-10 grid gap-5 sm:grid-cols-2"><article class="flex items-center gap-5 rounded-3xl bg-white p-7 shadow-[0_8px_30px_#142f250c]"><img class="h-16 w-16 shrink-0 rounded-full border-4 border-white object-cover shadow-md" src="images/chairman-illustration.png" alt="Illustrative portrait placeholder for the chairman"><div><p class="text-xs font-bold uppercase tracking-[.15em] text-[#71815c]">Chairman</p><h2 class="display mt-1 text-xl font-bold text-[#123d32]">Abdiwili Abdullahi</h2></div></article><article class="flex items-center gap-5 rounded-3xl bg-white p-7 shadow-[0_8px_30px_#142f250c]"><img class="h-16 w-16 shrink-0 rounded-full border-4 border-white object-cover shadow-md" src="images/secretary-illustration.png" alt="Illustrative portrait placeholder for the secretary"><div><p class="text-xs font-bold uppercase tracking-[.15em] text-[#71815c]">Secretary</p><h2 class="display mt-1 text-xl font-bold text-[#123d32]">Abdihakim Alim</h2></div></article></div><p class="mt-5 text-xs leading-5 text-stone-400">These are representative illustrations, not portraits of the named leaders.</p></div></section>
+    </main>
+    <footer class="border-t border-stone-200 bg-[#fbfaf6] px-6 py-5 text-center text-xs text-stone-400">© <span id="year"></span> ARESA Charity Group · Aresa</footer>
+  </div>
+  <script>
+    const sideMenu=document.getElementById('sideMenu');const menuOverlay=document.getElementById('menuOverlay');const menuButton=document.getElementById('menuButton');const closeMenu=document.getElementById('closeMenu');
+    function setMenu(open){sideMenu.classList.toggle('is-open',open);menuOverlay.classList.toggle('hidden',!open);menuButton.setAttribute('aria-expanded',String(open));document.body.classList.toggle('overflow-hidden',open);}
+    function showPage(name){document.querySelectorAll('[data-view]').forEach(view=>view.classList.toggle('active',view.dataset.view===name));document.querySelectorAll('.page-link').forEach(link=>{const selected=link.dataset.page===name;link.classList.toggle('active',selected);if(selected)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current')});setMenu(false);window.scrollTo({top:0,behavior:'smooth'});}
+    document.querySelectorAll('.page-link,[data-go]').forEach(control=>control.addEventListener('click',()=>showPage(control.dataset.page||control.dataset.go)));
+    document.querySelector('[data-home-link]').addEventListener('click',event=>{event.preventDefault();showPage('home')});
+    menuButton.addEventListener('click',()=>setMenu(true));closeMenu.addEventListener('click',()=>setMenu(false));menuOverlay.addEventListener('click',()=>setMenu(false));document.addEventListener('keydown',event=>{if(event.key==='Escape')setMenu(false)});
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
